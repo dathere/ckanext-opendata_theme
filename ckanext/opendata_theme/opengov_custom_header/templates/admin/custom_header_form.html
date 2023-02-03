@@ -1,0 +1,134 @@
+{% extends "admin/base.html" %}
+
+{% import 'macros/form.html' as form %}
+
+{% if h.version(h.ckan_version()) < h.version('2.9') %}
+    {% set custom_header_action = h.url_for(
+    controller='ckanext.opendata_theme.opengov_custom_header.plugin.pylons_plugin:HeaderController',
+    action='custom_header') %}
+
+    {% set reset_custom_header = h.url_for(
+    controller='ckanext.opendata_theme.opengov_custom_header.plugin.pylons_plugin:HeaderController',
+    action='reset_custom_header') %}
+
+    {% set remove_link_from_custom_header = h.url_for(
+    controller='ckanext.opendata_theme.opengov_custom_header.plugin.pylons_plugin:HeaderController',
+    action='remove_link') %}
+
+    {% set add_link_from_custom_header = h.url_for(
+    controller='ckanext.opendata_theme.opengov_custom_header.plugin.pylons_plugin:HeaderController',
+    action='add_link') %}
+{% else %}
+    {% set custom_header_action = h.url_for('/ckan-admin/custom_header/') %}
+    {% set reset_custom_header = h.url_for('/ckan-admin/reset_custom_header/') %}
+    {% set remove_link_from_custom_header = h.url_for('/ckan-admin/remove_link_from_header/') %}
+    {% set add_link_from_custom_header = h.url_for('/ckan-admin/add_link_to_header/') %}
+{% endif %}
+
+
+{% block primary_content_inner %}
+    {{ form.errors(errors) }}
+    <form method="post" action="{{ custom_header_action }}" id="custom-header-form">
+        <h3>Header Layout:</h3>
+        <div class="form-group control-group control-medium">
+            <div class="controls">
+                <select class="form-control" name="layout_type">
+                    <option value="default" {% if layout_type == 'default' or not layout_type %}selected="selected"{% endif %}>Default</option>
+                    <option value="compressed" {% if layout_type == 'compressed' %}selected="selected"{% endif %}>Compressed</option>
+                </select>
+            </div>
+        </div>
+        <h3>Current Navigation Links:</h3>
+        {% for link in links %}
+            <div class="form-group control-group">
+                <div class="row" id="{{ link.position }}">
+                    <div class="col-md-1 span1" style="width:75px;">
+                        <div class="input-group">
+                        <input type="text" class="form-control" name="position" value="{{ link.position }}"/>
+                        </div>
+                    </div>
+                    <div class="col-md-5 span5">
+                        <div class="input-group">
+                        <label class="input-group-addon" for="{{ link.title }}">Title</label>
+                        <input type="text" class="form-control" name="title" value="{{ link.title }}"/>
+                        </div>
+                    </div>
+                    <div class="col-md-5 span5">
+                        <div class="input-group">
+                        <label class="input-group-addon" for="{{ link.url }}">URL</label>
+                        <input type="text" class="form-control" name="url" value="{{ link.url }}"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </form>
+    <hr>
+    <form method="post" action="{{ add_link_from_custom_header }}">
+        <h3>Add Navigation Link:</h3>
+        <div class="form-group control-group control-custom">
+            <div class="controls editor">
+                <div class="row">
+                    <div class="col-sm-5 span5">
+                        <div class="input-group">
+                            <label class="input-group-addon" for="new_title">Title</label>
+                            <input class="form-control" type="text" id="new_title" name="new_title"/>
+                        </div>
+                    </div>
+                    <div class="col-sm-5 span5">
+                        <div class="input-group">
+                            <label class="input-group-addon" for="new_url">URL</label>
+                            <input class="form-control" type="text" id="new_url" name="new_url"/>
+                        </div>
+                    </div>
+                    <button class="btn btn-default" name="add" type="submit">{{ _('Add') }}</button>
+                </div>
+            </div>
+        </div>
+    </form>
+    <hr>
+    <form method="post" action="{{ remove_link_from_custom_header }}">
+        <h3>Remove Navigation Link:</h3>
+        <div class="form-group control-group control-custom">
+            <div class="controls editor">
+                <div class="row">
+                    <div class="col-sm-5 span5">
+                        <div class="input-group">
+                            <label class="input-group-addon" for="to_remove">Title (URL)</label>
+                            <select class="form-control" name="to_remove">
+                                {% for link in links %}
+                                    <option value="{{ link.title }}">{{ link.title }} ( {{ link.url }} )</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                    <button class="btn btn-default" name="remove" type="submit">{{ _('Remove') }}</button>
+                </div>
+            </div>
+        </div>
+    </form>
+    <hr>
+    <div class="form-actions">
+        <button class="btn btn-primary pull-right" name="save" type="submit">{{ _('Update Config') }}</button>
+        <a class="btn btn-danger pull-left" data-module="confirm-action"
+           data-module-content="Do you really want to reset custom header? All your changes will be lost."
+           href="{{ reset_custom_header }}">{{ _('Reset to Default') }}
+        </a>
+    </div>
+{% endblock %}
+
+{% block secondary_content %}
+    <div class="module module-narrow module-shallow">
+        <h2 class="module-heading">
+            <i class="fa fa-info-circle"></i>
+            {{ _('Config Options Guide') }}
+        </h2>
+        <div class="module-content">
+            {% block admin_form_help %}
+                {% trans %}
+                    <p><strong>Custom Header:</strong> Customize header</p>
+                {% endtrans %}
+            {% endblock %}
+        </div>
+    </div>
+{% endblock %}

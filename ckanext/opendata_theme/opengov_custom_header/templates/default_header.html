@@ -15,8 +15,16 @@
   {% set group_index_route = 'group_index' %}
 {% endif %}
 
-{% block header_wrapper %}
-<header class="navbar navbar-static-top masthead compressed">
+{% block header_wrapper %} {% block header_account %}
+<div class="account-masthead">
+  <div class="container">
+    {% block header_account_container_content %}
+      {{ super() }}
+    {% endblock %}
+  </div>
+</div>
+{% endblock %}
+<header class="navbar navbar-static-top masthead">
   {% block header_debug %}
     {{ super() }}
   {% endblock %}
@@ -27,16 +35,15 @@
         <span class="fa fa-bars"></span>
       </button>
     </div>
-    <hgroup class="{{ g.header_class }} pull-left">
+    <hgroup class="{{ g.header_class }} navbar-left">
       {% block header_logo %}
         {{ super() }}
       {% endblock %}
     </hgroup>
-
     <div class="collapse navbar-collapse" id="main-navigation-toggle">
       {% block header_site_navigation %}
-        <nav class="section navigation">
-          <ul class="nav nav-pills">
+      <nav class="section navigation">
+        <ul class="nav nav-pills">
             {% block header_site_navigation_tabs %}
               {{ h.opendata_theme_build_nav_main(
                 (search_route, _('Datasets')),
@@ -48,33 +55,12 @@
             <li>
               <a href="{{ h.url_for('/about') }}" title="{{ _('About') }}">{{ _('About') }}</a>
             </li>
-          </ul>
-        </nav>
+        </ul>
+      </nav>
       {% endblock %}
-      {% block header_account %}
-        <div class="account-masthead">
-          {% block header_account_container_content %}
-            {% if c.userobj %}
-              <div class="account avatar authed" data-module="me" data-me="{{ c.userobj.id }}">
-                <ul class="list-unstyled unstyled">
-                  {% block header_account_logged %}
-                    {{ super() }}
-                  {% endblock %}
-                </ul>
-              </div>
-            {% else %}
-              <nav class="account not-authed" aria-label="{{ _('Account') }}">
-                <ul class="list-unstyled unstyled">
-                  {% block header_account_notlogged %}
-                    {{ super() }}
-                  {% endblock %}
-                </ul>
-              </nav>
-            {% endif %}
-          {% endblock %}
-        </div>
+      {% block header_site_search %}
+        {{ super() }}
       {% endblock %}
-
     </div>
   </div>
 </header>

@@ -2,6 +2,8 @@ import ast
 import logging
 
 from ckan.plugins import toolkit
+from ckan.plugins.toolkit import config
+from packaging.version import Version
 
 from ckanext.opendata_theme.base.compatibility_controller import BaseCompatibilityController
 from ckanext.opendata_theme.opengov_custom_homepage.constants import CUSTOM_NAMING
@@ -97,6 +99,14 @@ def package_tracking_summary(package):
     return tracking_summary
 
 
+def get_group_alias():
+    return str(config.get('ckan.group_alias', 'Group'))
+
+
+def get_organization_alias():
+    return str(config.get('ckan.organization_alias', 'Organization'))
+
+
 def get_custom_name(key, default_name):
     custom_naming = toolkit.get_action('config_option_show')({'ignore_auth': True}, {"key": CUSTOM_NAMING})
     if not custom_naming:
@@ -113,3 +123,7 @@ def get_custom_name(key, default_name):
 
 def get_data(key):
     return BaseCompatibilityController.get_data(key)
+
+
+def version_builder(text_version):
+    return Version(text_version)
