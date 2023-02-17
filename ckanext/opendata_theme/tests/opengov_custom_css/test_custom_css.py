@@ -27,7 +27,7 @@ DEFAULT_CUSTOM_CSS = (
     '.account-masthead .account ul li a,.account-masthead .account ul li a:hover {color: #ffffff}',
     '.account-masthead .account ul li a:hover {background: #1f76d8}',
     '.masthead {background: #1f76d8}',
-    '.navbar .nav>li>a,.masthead .nav>li>a,.masthead .nav>li>a:focus,.masthead .nav>li>a:hover,.masthead .nav>.active>a,.masthead .nav>.active>a:hover,.masthead .nav>.active>a:focus {color: #ffffff}',
+    '.navbar .nav>li>a,.masthead .nav>li>a,.masthead .nav>.active>a {color: #ffffff}',
     '.masthead .navigation .nav-pills li a:hover,.masthead .navigation .nav-pills li.active a {background-color: #044187}',
     '.module-heading {background: #1f76d8; color: #ffffff}',
     'body, .site-footer {background: #383b3d}',
