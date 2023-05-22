@@ -23,7 +23,7 @@ def clean_html(text):
 
 
 class CustomFooterController(BaseCompatibilityController):
-    default_footer = {'layout_type': 'default'}
+    default_footer = {'layout_type': 'default', 'content_0': '', 'content_1': ''}
 
     def custom_footer(self):
         try:

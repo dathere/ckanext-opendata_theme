@@ -197,6 +197,8 @@ def search_document_page_exists(page_id):
 
 
 def check_characters(value):
+    if value in ['', None]:
+        return False
     if value and set(value) <= set(string.printable):
         return False
     return True
