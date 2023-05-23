@@ -127,6 +127,9 @@
 .media-grid .media-item .media-image {
   max-height: 120px;
 }
+.media-grid .media-item img.img-responsive {
+  display: inline-block;
+}
 #organization-search-form + .media-grid h3,
 #group-search-form + .media-grid h3,
 .slick-showcase .media-item h3 {
