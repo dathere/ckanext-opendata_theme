@@ -1,0 +1,87 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic);
+
+.tint {
+  background-color: rgba(0, 0, 0, 0.6) !important;
+  background-blend-mode: multiply;
+}
+.hero {
+  background-repeat: no-repeat !important;
+  background-image: url(/img/hero_image.jpg) !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  z-index: 2;
+}
+.hero-text {
+  color: #ffffff;
+  text-align: center;
+}
+.hero-text-heading {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 36px;
+  font-weight: 600;
+}
+.hero-text-description {
+  font-size: 20px;
+}
+.hero-text-description a,
+.hero-text-description a:hover,
+.hero-text-description a:focus {
+  color: #ffffff;
+  text-decoration: underline;
+}
+.homepage .module-search {
+  background-color: transparent !important;
+}
+.homepage .hero .module-search {
+  margin-top: 20px !important;
+}
+.homepage .module-search .search-form {
+  padding: 0;
+}
+#dataset-search-form.search-form {
+  border-bottom: 1px dotted #dddddd !important;
+}
+.dataset-item {
+  border-bottom: 1px dotted #dddddd !important;
+  min-height: 90px;
+}
+.dataset-item:last-of-type {
+  border-bottom: none !important;
+}
+.dataset-list-left-icon {
+  max-width: 70px;
+  max-height: 70px;
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 30px;
+}
+.label[data-format=chart],
+.label[data-format*=chart] {
+  background-color: #935DA7;
+}
+.format-label[data-format=chart],
+.format-label[data-format*=chart] {
+  width: 32px;
+  height: 35px;
+  background: url(/img/chart_icon.png);
+  transform: unset;
+  top: 25px !important;
+  left: 25px !important;
+}
+li.changed-package span.actor {
+  display: none;
+}
+.site-footer .og-attribution {
+  position: absolute;
+  bottom: -20px;
+  right: 0px;
+  width: 220px;
+}
+@media (max-width: 767px) {
+  .dataset-list-left-icon {
+    display: none;
+  }
+  .site-footer .og-attribution {
+    bottom: unset;
+  }
+}
