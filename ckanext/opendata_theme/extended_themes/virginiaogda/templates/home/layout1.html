@@ -1,0 +1,24 @@
+
+<div role="main">
+  {% if 'heroslideradmin' in g.plugins %}
+    {% snippet 'home/snippets/hero_slider.html' %}
+  {% else %}
+    {% snippet 'home/snippets/hero_title.html' %}
+  {% endif %}
+
+  <div class="flex-container">
+    {% block opendata_stats %}
+      {% snippet 'home/snippets/stats.html' %}
+    {% endblock %}
+
+    {% block opendata_theme_featured_datasets %}
+      {% snippet 'home/snippets/featured_datasets.html' %}
+    {% endblock %}
+
+    {% block opendata_theme_popular_datasets %}
+      {% snippet 'home/snippets/popular_datasets.html' %}
+    {% endblock %}
+
+
+  </div>
+</div>

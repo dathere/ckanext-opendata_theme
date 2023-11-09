@@ -1,0 +1,23 @@
+<div class="main-browse">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 span12 col1">
+                <div class="module-content">
+                    <h2 class="heading">                 
+                            {{ h.opendata_theme_get_custom_name('stats-custom-name', 'Stats') }}
+                    </h2>
+                    {% for stat in h.opendata_theme_get_stats() %}
+                        <div class="browse-group">
+                            <div class="browse-group-title">
+                                {{ stat.display_name }}
+                            </div>
+                            <div class="browse-group-image">
+                                <img alt="" src="{{ stat.image_display_url }}">
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
