@@ -1,12 +1,62 @@
-
-[role=main], .main {
-  background: #443312;
+.tint {
+  background-color: rgba(0, 0, 0, 0.6) !important;
+  background-blend-mode: multiply;
+}
+.hero {
+  background-repeat: no-repeat !important;
+  background-image: url(/img/hero-image.png) !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  z-index: 2;
+}
+.hero-text {
+  color: #ffffff;
+  text-align: center;
+}
+.hero-text-heading {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 36px;
+  font-weight: 600;
+}
+.hero-text-description {
+  font-size: 20px;
+}
+.hero-text-description a,
+.hero-text-description a:hover,
+.hero-text-description a:focus {
+  color: #ffffff;
+  text-decoration: underline;
+}
+.homepage .module-search {
+  background-color: transparent !important;
 }
 
-.hero {
-    background: url('/img/hero-image.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    width: 100%;   
-  }
+
+/* Main Layout CSS */
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Adjust the gap as needed */
+}
+
+
+/* Popular Datasets CSS */
+.main-browse .container {
+  width: 100%; /* Adjust width as needed */
+  max-width: 1200px; /* Adjust max width as per your design */
+  margin: 0 auto;
+}
+
+.main-browse .row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.main-browse .col-md-12 {
+  position: relative;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
