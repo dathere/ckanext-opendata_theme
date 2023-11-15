@@ -64,56 +64,82 @@
 .module-content .cards {
   padding: 0 0 30px;
   display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 60px 0;
 }
 
 .card {
-  height: 250px;
-  width: 250px;
-  border: #77C5EB 2px solid;
-  border-radius: 10px;
+  height: 240px;
+  width: 240px;
+  border-radius: 40px;
   background-color: #77C5EB;
-  margin-right: 35px;
-  margin-left: 5rem;
-  margin-bottom: -80px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  
 }
 
 .card .card-img-top{
-  width: 120px;
+  max-width: 100%;
+  max-height: 128px;
   background: transparent;
+  padding-top:0px;
 
 }
 
 .card .card-body {
   position: relative;
-  padding: 0;
-  margin: 0;
-  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 15px;
+  text-align: center;
 }
 
 .card .card-body .card-title {
   position: relative;
-  bottom: 0;
-  left: 100px;
-  width: 100%;
-  padding: 10px 15px;
+  color: #000000;
+  font-size: 42px;
+  font-weight: lighter;
   margin: 0;
-  color: #ffffff;
-  font-size: 16px;
-  font-weight: 600;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+}
+.card .card-body .card-title span {
+  font-weight: lighter;
 }
 
 .card .card-body .card-text {
-  position: relative;
-  bottom: -30px;
-  left: 20px;
-  width: 100%;
-  padding: 10px 15px;
-  margin: 0;
-  color: #ffffff;
-  font-size: 16px;
-  font-weight: 600;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+ font-size: 21px;
+ font-weight: bold;
+ margin: 0;
+}
+
+.featured-dataset h2.headeing {
+  font-size: 54px;
+  font-family: Mont;
+  color: #075A83;
+  font-weight: bold;
+
+}
+.featured-dataset section .dataset-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+.featured-dataset section .dataset-list .dataset-item .dataset-content .dataset-heading {
+  font-size: 36px;
+  color: #FFF;
+  text-align: center;
+
+} 
+.featured-dataset section .dataset-list .dataset-item .dataset-content .dataset-heading:after {
+  position: absolute;
+  content: '';
+  width: 80%;
+  height: 2px;
+  background: #FFF;
+  margin: 7px auto;
 }
