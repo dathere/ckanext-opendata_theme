@@ -1,3 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+/*Overwrite */
+
+
+html, body {
+  font-family: 'Montserrat', sans-serif!important;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 1.5;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 { 
+  font-weight: 300!important;
+  font-family: 'Montserrat', sans-serif!important;
+}
+
+.main-featured .heading, .main-browse .heading, .main-updates .heading {
+  border-bottom: 4px solid #075A83!important;
+}
+
+
 .tint {
   background-color: rgba(0, 0, 0, 0.6) !important;
   background-blend-mode: multiply;
@@ -117,29 +138,119 @@
  margin: 0;
 }
 
-.featured-dataset h2.headeing {
+.featured-dataset h2.heading,
+.popular-dataset h2.heading{
   font-size: 54px;
-  font-family: Mont;
   color: #075A83;
-  font-weight: bold;
+  font-weight: bold!important;
 
 }
-.featured-dataset section .dataset-list {
+.featured-dataset section .dataset-list, 
+.popular-dataset section .dataset-list {
   display: flex;
-  justify-content: space-between;
-  align-items: start;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
 }
-.featured-dataset section .dataset-list .dataset-item .dataset-content .dataset-heading {
+
+.featured-dataset section .dataset-list .dataset-item, 
+.popular-dataset section .dataset-list .dataset-item {
+  width: 31%;
+  margin: 0 1%;
+}
+.featured-dataset section .dataset-list .dataset-item .dataset-content, 
+.popular-dataset section .dataset-list .dataset-item .dataset-content {
+  border-radius: 24px;
+  background: #075A83;
+  padding: 30px;
+  position: relative;
+}
+.featured-dataset section .dataset-list .dataset-item .dataset-content h3.dataset-heading, 
+.popular-dataset section .dataset-list .dataset-item .dataset-content h3.dataset-heading {
+  position: relative;
   font-size: 36px;
+}
+.featured-dataset section .dataset-list .dataset-item .dataset-content .dataset-heading a, 
+.popular-dataset section .dataset-list .dataset-item .dataset-content .dataset-heading a {
   color: #FFF;
   text-align: center;
-
+  text-decoration: none;
 } 
-.featured-dataset section .dataset-list .dataset-item .dataset-content .dataset-heading:after {
-  position: absolute;
+.featured-dataset section .dataset-list .dataset-item .dataset-content .dataset-heading a:hover, 
+.popular-dataset section .dataset-list .dataset-item .dataset-content .dataset-heading a:hover {
+  color: rgba(255,255,255,.25);
+}
+.featured-dataset section .dataset-list .dataset-item .dataset-content .dataset-heading::after, 
+.popular-dataset section .dataset-list .dataset-item .dataset-content .dataset-heading::after {
+  position: relative;
   content: '';
-  width: 80%;
-  height: 2px;
-  background: #FFF;
-  margin: 7px auto;
+  width: 100%;
+  height: 4px;
+  background: rgba(255,255,255,.25);
+  margin: 15px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.featured-dataset section .dataset-list .dataset-item .dataset-content .dataset-description, 
+.popular-dataset section .dataset-list .dataset-item .dataset-content .dataset-description {
+  color: #FFFFFF;
+  font-size: 16px;
+}
+
+
+.groups-links h2.heading{
+  font-size: 54px;
+  color: #77C5EB;
+  font-weight: bold!important;
+}
+.groups-links .groups-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+}
+.groups-links a.browse-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-decoration: none;
+
+  width:auto;
+  min-height: 144px;
+  min-width: 144px;
+  margin: 0 15px  15px 0;
+
+}
+.groups-links a.browse-group:hover {
+  text-decoration: none;
+  color: #075A83;
+}
+.groups-links a.browse-group img.browse-group-image {
+  width: 144px;
+  height: 144px;
+  border-radius: 100%;
+  background: #77C5EB;
+  padding: 15px;
+  max-width: 144px;
+  max-height: 144px;
+  margin: 15px auto;
+}
+.groups-links a.browse-group .browse-group-title {
+  text-align: center;
+  color: #77C5EB;
+  font-size: 30px;
+ 
+}
+
+@media screen and (max-width: 768px) {
+  .featured-dataset section .dataset-list, .popular-dataset section .dataset-list {
+    flex-wrap: wrap;
+  }
+  .featured-dataset section .dataset-list .dataset-item, .popular-dataset section .dataset-list .dataset-item {
+    width: 100%;
+    margin: 0 0 30px;
+  }
+  
 }

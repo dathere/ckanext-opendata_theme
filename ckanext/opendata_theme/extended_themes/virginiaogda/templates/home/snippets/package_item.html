@@ -1,4 +1,3 @@
-
 {% block package_item %}
   <li class="{{ item_class or "dataset-item" }}">
     {% block content %}
@@ -14,7 +13,7 @@
               {% endif %}
             {% endblock %}
             {% block heading_title %}
-              {{ h.link_to(h.truncate(title, truncate_title), package_url) }}
+              {{ h.link_to(h.truncate(package.get('title')), package_url) }}
             {% endblock %}
             {% block heading_meta %}
               {% if package.get('state', '').startswith('draft') %}
@@ -22,39 +21,10 @@
               {% elif package.get('state', '').startswith('deleted') %}
                 <span class="label label-important">{{ _('Deleted') }}</span>
               {% endif %}
-              {{ h.popular('recent views', package.tracking_summary.recent, min=10) if package.tracking_summary }}
             {% endblock %}
           </h3>
-        {% endblock %}
-        {% block notes %}
-          {% if note_type == 'updated' %}
-            {% if package.metadata_modified %}
-              <div>Updated on {{ h.render_datetime(package.metadata_modified) }}</div>
-            {% endif %}
-          {% elif note_type == 'recent_views' %}
-            {% set tracking_summary = h.opendata_theme_get_package_tracking_summary(package) %}
-            {% if tracking_summary %}
-                <div>{{ tracking_summary.recent }} recent views</div>
-            {% endif %}
-          {% endif %}
-        {% endblock %}
-        {% block resources %}
-          {% if package.resources and not hide_resources %}
-            {% block resources_outer %}
-              <ul class="dataset-resources list-unstyled list-unstyled">
-                {% block resources_inner %}
-                  {% for resource in h.dict_list_reduce(package.resources, 'format') %}
-                    <li>
-                      <a href="{{ h.url_for(controller='dataset', action='read', id=package.name) }}"
-                          class="label" data-format="{{ resource.lower() }}"
-                          style="color:white;">{{ resource }}</a>
-                    </li>
-                  {% endfor %}
-                {% endblock %}
-              </ul>
-            {% endblock %}
-          {% endif %}
-        {% endblock %}
+          <p class="dataset-description">{{ h.truncate(package.get('notes'), 80) }}</p>
+          {% endblock %}
       </div>
     {% endblock %}
   </li>
