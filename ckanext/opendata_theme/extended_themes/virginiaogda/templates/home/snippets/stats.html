@@ -8,48 +8,32 @@
                     <h2 class="heading">                 
                             {{ h.opendata_theme_get_custom_name('stats-custom-name', '') }}
                     </h2>
+                    <div class="cards">
+                        <div class="card">
+                                <img class="card-img-top" src="/img/bar-graph.png" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">   {{ h.SI_number_span(stats.dataset_count) }}</h5>
+                                    <p class="card-text"> Datasets Available</p>
+                                </div>
+                            </div>
 
-                        <div class="browse-group">
-                            <!-- <div class="">
-                                <img alt="img1" src="/img/browse.png" />
-                            </div> -->
-                            <div class="browse-group-count">
-                               
-                                {{ h.SI_number_span(stats.dataset_count) }}
+                            <div class="card">
+                                <img class="card-img-top" src="/browse.png" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ h.SI_number_span(stats.dataset_count) }}</h5>
+                                    <p class="card-text">Total Datasets Views</p>
+                                </div>
                             </div>
-                            <div class="browse-group-title">
-                                Datasets Available
-                            </div>
-                            
-                        </div>
 
-
-                        <div class="browse-group">
-                            <!-- <div class="">
-                                <img alt="img2" src="/img/bar-graph.png" />
-                            </div> -->
-                            <div class="browse-group-count">
-                               <!-- total number of resources -->
-                                {{ h.SI_number_span(stats.dataset_count) }}
-                            </div>
-                            <div class="browse-group-title">
-                                Total Datasets Views
-                            </div>
-                            
-                        </div>
-
-                        <div class="browse-group">
-                            <!-- <div class="">
-                                <img alt="img3" src="/img/computer-bar-chart.png" />
-                            </div> -->
-                            <div class="browse-group-count">
-                               
-                                {{ h.SI_number_span(stats.dataset_count) }}
-                            </div>
-                            <div class="browse-group-title">
-                                Datasets Contributors
+                            <div class="card">
+                                <img class="card-img-top" src="/browse.png" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title"> {{ h.SI_number_span(stats.dataset_count) }}</h5>
+                                    <p class="card-text">Datasets Contributors</p>
+                                </div>  
                             </div>
                         </div>
+                    </div>
                 </div>
             </div>
         </div>

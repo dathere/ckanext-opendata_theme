@@ -3,6 +3,7 @@ import ckan.plugins as plugins
 import ckan.plugins.toolkit as toolkit
 import logging
 import ckan.model as model
+import ckan.lib.helpers as h
 
 from ckan.model.package import Package
 from ckan.model.package_extra import PackageExtra
@@ -22,9 +23,8 @@ class OpenDataThemePlugin(plugins.SingletonPlugin):
     # ITemplateHelpers
     def get_helpers(self):
         return {
-            'opendata_theme_get_featured_datasets': get_featured_datasets,
-            'opendata_theme_get_stats': get_stats,
-        }
+            'opendata_theme_get_featured_datasets': get_featured_datasets
+            }
 
 
 
@@ -36,26 +36,30 @@ def get_featured_datasets():
     try:
         featured_datasets = model.Session.query(Package)\
             .join(PackageExtra)\
-            .filter(PackageExtra.key == 'featured')\
-            .filter(PackageExtra.value == 'true')\
+            .filter(PackageExtra.key == 'featured_dataset')\
+            .filter(PackageExtra.value == 'yes')\
             .filter(Package.state == 'active')\
             .order_by(PackageExtra.value) \
             .all()
     except Exception as e:
         logging.error('Error getting featured datasets: %s', e)
-    return featured_datasets
+    featured_datasets_dict_list = h.convert_to_dict('package',featured_datasets)
+    return featured_datasets_dict_list
 
-
-def get_stats():
-    '''
-    Returns a list of stats
-    '''
-    stats = []
-    # try:
-    #     stats = model.Session.query(PackageExtra)\
-    #         .filter(PackageExtra.key == 'stats')\
-    #         .order_by(PackageExtra.value) \
-    #         .all()
-    # except Exception as e:
-    #     logging.error('Error getting stats: %s', e)
-    return stats
+# def get_all_dataset_views():
+#     """
+#     Returns a list of all dataset views
+#     """
+#     all_dataset_views = []
+#     try:
+#         all_dataset_views = model.Session.query(Package)\
+#             .join(PackageExtra)\
+#             .filter(PackageExtra.key == 'featured_dataset')\
+#             .filter(PackageExtra.value == 'yes')\
+#             .filter(Package.state == 'active')\
+#             .order_by(PackageExtra.value) \
+#             .all()
+#     except Exception as e:
+#         logging.error('Error getting featured datasets: %s', e)
+#     all_dataset_views_dict_list = h.convert_to_dict('package',all_dataset_views)
+#     return all_dataset_views_dict_list
