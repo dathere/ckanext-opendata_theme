@@ -124,7 +124,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 .card .card-body .card-title {
   position: relative;
   color: #000000;
-  font-size: 42px;
+  font-size: 36px;
   font-weight: lighter;
   margin: 0;
 }
@@ -140,7 +140,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 
 .featured-dataset h2.heading,
 .popular-dataset h2.heading{
-  font-size: 54px;
+  font-size: 36px;
   color: #075A83;
   font-weight: bold!important;
 
@@ -168,7 +168,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 .featured-dataset section .dataset-list .dataset-item .dataset-content h3.dataset-heading, 
 .popular-dataset section .dataset-list .dataset-item .dataset-content h3.dataset-heading {
   position: relative;
-  font-size: 36px;
+  font-size: 24px;
 }
 .featured-dataset section .dataset-list .dataset-item .dataset-content .dataset-heading a, 
 .popular-dataset section .dataset-list .dataset-item .dataset-content .dataset-heading a {
@@ -200,7 +200,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 
 
 .groups-links h2.heading{
-  font-size: 54px;
+  font-size: 36px;
   color: #77C5EB;
   font-weight: bold!important;
 }
