@@ -1,0 +1,216 @@
+/* Problem getting the google api font family
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+ */
+/*Overwrite */
+html, body {
+  font-family: 'Montserrat', sans-serif!important;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 1.5;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 { 
+  font-weight: 300!important;
+  font-family: 'Montserrat', sans-serif!important;
+}
+
+
+
+.main-browse .module-content .cards {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 60px 0;
+    @media screen and (max-width: 768px) {
+        flex-direction: column;
+    }
+    .card {
+        height: 240px;
+        width: 240px;
+        border-radius: 40px;
+        background-color: #77C5EB;
+        padding: 12px;
+        margin: 1rem auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        .card-img-top{
+            max-width: 100%;
+            max-height: 128px;
+            background: transparent;
+            padding-top:0px;
+          
+          }
+          .card-body {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 0 15px;
+            text-align: center;
+            .card-title {
+                position: relative;
+                color: #000000;
+                font-size: 36px;
+                font-weight: lighter;
+                margin: 0;
+                span {
+                    font-weight: lighter;
+                  }
+              }
+              .card-text {
+                font-size: 21px;
+                font-weight: bold;
+                margin: 0;
+               }
+          }
+        
+    }
+}
+
+/* Main Containers */
+
+.main-browse, 
+.main-featured, 
+.main-popular, 
+.main-showcase {
+    .container {
+        .module-content{
+            h2 {
+                font-size: 36px;
+                color: #075A83;
+                font-weight: bold!important;
+                border-bottom: 4px solid #075A83!important;
+                a {
+                    text-decoration: none;
+                    &:hover {
+                        text-decoration: none;
+                    }
+                }
+            }
+            section {
+                .dataset-list {
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: flex-start;
+                    flex-wrap: wrap;
+                    @media screen and (max-width: 768px) {
+                        flex-wrap:wrap;
+                    }
+                    .dataset-item {
+                        width: 32%;
+                        margin: 0 2% 0 0;
+                        @media screen and (max-width: 768px) {
+                            width: 100%;
+                            margin: 0 0 30px;
+                            
+                        }
+
+                        &:nth-child(n + 3) {
+                            margin: 0;
+                        }
+                        .dataset-content {
+                            border-radius: 24px;
+                            background: #075A83;
+                            padding: 30px;
+                            position: relative;
+                            h3.dataset-heading {
+                                position: relative;
+                                font-size: 24px;
+                                a {
+                                    color: #FFF;
+                                    text-align: center;
+                                    text-decoration: none;
+                                    &:hover {
+                                        color: rgba(255,255,255,.25);
+                                      }
+                                  } 
+                                  &::after {
+                                    position: relative;
+                                    content: '';
+                                    width: 100%;
+                                    height: 4px;
+                                    background: rgba(255,255,255,.25);
+                                    margin: 15px auto;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                  }
+                              }
+                              .dataset-description {
+                                color: #FFFFFF;
+                                font-size: 16px;
+                              }
+                              figure.showcase-image {
+                                img {
+                                    max-width: 100%;
+                                    width: 100%;
+                                    height: auto;
+                                }
+                              }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.main-groups {
+    .container {
+        .module-content{
+            h2 {
+                font-size: 36px;
+                color: #075A83;
+                font-weight: bold!important;
+                border-bottom: 4px solid #075A83!important;
+            }
+            .groups-wrapper {
+                display: flex;
+                justify-content: flex-start;
+                align-items: flex-start;
+                flex-wrap: wrap;
+                .group-wrapper {
+                    flex: 0 0 25%;
+                    max-width: 25%;
+                    @media screen and (max-width: 768px) {
+                        flex: 0 0 100%;
+                        max-width: 100%;
+                    }
+
+                 
+                a.browse-group {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: column;
+                    text-decoration: none;
+                
+                    margin: 0 auto;
+                    &:hover {
+                        text-decoration: none;
+                        color: #075A83;
+                      }
+                      img.browse-group-image {
+                        width: 144px;
+                        height: 144px;
+                        border-radius: 100%;
+                        background: #77C5EB;
+                        padding: 15px;
+                        max-width: 144px;
+                        max-height: 144px;
+                        margin: 15px auto;
+                      }
+                      .browse-group-title {
+                        text-align: center;
+                        color: #77C5EB;
+                        font-size: 30px;
+                       
+                      }
+                    }
+                }
+            }
+        }
+    }
+}

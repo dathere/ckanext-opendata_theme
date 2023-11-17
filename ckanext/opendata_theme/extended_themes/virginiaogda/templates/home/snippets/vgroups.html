@@ -1,9 +1,9 @@
-<div class="main-browse">
+<div class="main-groups">
     <div class="container">
         <div class="row">
             <div class="col-md-12 span12 col1">
-                <div class="module-content groups-links">
-                    <h2 class="heading">
+                <div class="module-content">
+                    <h2>
                         <a href="/group">
                             {{ h.opendata_theme_get_custom_name('groups-custom-name', 'Groups') }}
                         </a>
@@ -11,6 +11,7 @@
                     <div class="groups-wrapper">
                         {% for group in h.opendata_theme_get_groups() %}
                             {% if group.package_count > 0 %}
+                            <div class="group-wrapper">
                                 <a href="/group/{{ group.name }}"
                                 title="{{ _('{name}').format(name=h.markdown_extract(group.description, 180) or 'No description') }}"
                                 class="browse-group">
@@ -20,6 +21,7 @@
                                         {{ group.display_name }}
                                     </div>
                                 </a>
+                            </div>
                             {% endif %}
                         {% endfor %}
                     </div>
