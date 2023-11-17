@@ -1,11 +1,10 @@
 {% block showcase_item %}
-
 <li class="dataset-item">
   <div class="dataset-content">
     {% block item_inner %}
       {% block title %}
       <h3 class="dataset-heading">
-        {{ h.link_to(h.truncate(showcase.title), showcase.url) }}
+        {{ h.link_to(h.truncate(showcase.title), "showcase/"+showcase.id) }}
       </h3>
       {% endblock %}
       {% block notes %}
