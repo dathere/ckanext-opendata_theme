@@ -1,4 +1,4 @@
-{% set popular_datasets = h.opendata_theme_get_datasets_popular() %}
+{% set popular_datasets = h.opendata_theme_get_datasets_popular(6) %}
 
 
 <div class="main-popular">
@@ -8,7 +8,7 @@
         <a href="/dataset?sort=views_recent+desc">{{ h.opendata_theme_get_custom_name('popular-datasets-custom-name', 'Popular Datasets') }}</a>
       </h2>    
       <section>
-        {% snippet 'home/snippets/package_list.html', packages=popular_datasets%}
+        {% snippet 'home/snippets/package_list.html', packages=popular_datasets, note_type='recent_views' %}
       </section>
         </div>
     </div>
