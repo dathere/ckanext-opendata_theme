@@ -14,6 +14,10 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   font-family: "Montserrat", sans-serif !important;
 }
 
+#content.container {
+  max-width: 1200px;
+}
+
 .main-browse .module-content .cards {
   display: flex;
   justify-content: space-around;
@@ -247,3 +251,51 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   color: #77C5EB;
   font-size: 30px;
 }/*# sourceMappingURL=custom.css.map */
+
+/* Additional info tables */
+
+.table.table-striped.table-bordered.table-condensed{
+  border: 1px solid #000000;
+  border-collapse: collapse;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 100%;
+  background-color: #FFFFFF;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 1.5;
+
+}
+
+.table.table-striped.table-bordered.table-condensed .dataset-label{
+  background-color: #173055;
+  color: #fff;
+}
+
+
+.search-form .dataset-item .dataset-content .dataset-heading.a{
+  font-size: 24px;
+  font-weight: bold;
+  color: #173055;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.module.module-narrow.module-shallow .module-heading{
+  background: #173055;
+}
+
+.main .secondary {
+  z-index: 1;
+  padding-right: 1px;
+  color: #fff;
+  background-color: #173055;
+}
+
+.module-narrow .nav-item > a, .module-narrow .nav-aside li a {
+  padding-left: 15px;
+  padding-right: 15px;
+  position: relative;
+  color: #fff;
+}

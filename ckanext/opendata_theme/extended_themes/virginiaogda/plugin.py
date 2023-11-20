@@ -25,5 +25,6 @@ class OpenDataThemePlugin(plugins.SingletonPlugin):
     def get_helpers(self):
         return {
             'opendata_theme_get_featured_datasets': vh.get_featured_datasets,
-            'opendata_theme_get_all_dataset_views': vh.get_all_dataset_views
+            'opendata_theme_get_all_resource_count': vh.get_all_resource_count,
+            'opendata_theme_get_contributors_count': vh.get_contributors_count,
             }
