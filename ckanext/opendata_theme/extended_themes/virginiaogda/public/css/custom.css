@@ -323,6 +323,21 @@ aside.secondary .filters .accordion-group .accordion-toggle.collapsed[data-toggl
   color: #fff;
 }
 
+.table.table-striped.table-bordered.table-condensed {
+  border: 1px solid #000000;
+  border-collapse: collapse;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 100%;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 1.5;
+}
+.table.table-striped.table-bordered.table-condensed tr th[scope=row] {
+  background-color: #173055 !important;
+  color: #fff;
+}
+
 @media (min-width: 980px) {
   #content.container {
     max-width: 1200px;
@@ -345,7 +360,6 @@ aside.secondary .filters .accordion-group .accordion-toggle.collapsed[data-toggl
   text-align: center;
   font-weight: 600 !important;
   margin: 1rem auto;
-  font-size: 24px;
 }
 .primary article.module .module-content #dataset-resources.resources h2 {
   border-bottom: 2px solid #173055;
@@ -359,4 +373,31 @@ aside.secondary .filters .accordion-group .accordion-toggle.collapsed[data-toggl
   background: #77C5EB;
   color: #173055;
   font-weight: 600;
+}
+
+#dataset-resources .btn-group {
+  display: inline-flex;
+  position: right;
+}
+#dataset-resources .btn-group .preview {
+  padding-right: 10px;
+}
+#dataset-resources .btn-group .preview .btn-preview {
+  background: #ffffff;
+  color: #075A83;
+  border-left: 1px solid #075A83;
+  border-bottom: 1px solid #075A83;
+}
+#dataset-resources .btn-group .preview .btn-preview:hover {
+  background: #FFF;
+  color: #075A83;
+}
+#dataset-resources .btn-group .download .btn-download {
+  background: #075A83;
+  color: #ffffff;
+  border: none;
+}
+#dataset-resources .btn-group .download .btn-download:hover {
+  background: #ffffff;
+  color: #075A83;
 }/*# sourceMappingURL=custom.css.map */
