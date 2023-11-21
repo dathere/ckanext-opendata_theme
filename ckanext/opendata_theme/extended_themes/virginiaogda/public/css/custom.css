@@ -1,6 +1,4 @@
-/* Problem getting the google api font family
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
- */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
 /*Overwrite */
 html, body {
   font-family: "Montserrat", sans-serif !important;
@@ -14,10 +12,30 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   font-family: "Montserrat", sans-serif !important;
 }
 
-#content.container {
-  max-width: 1200px;
-}
+/*
 
+@media (min-width: 768px) {
+    #content.container {
+      width: 750px!important;
+      max-width: 100%!important;
+    }
+  }
+  */
+@media (min-width: 980px) {
+  .container, .navbar-static-top .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container {
+    max-width: 1200px !important;
+    width: 100% !important;
+  }
+}
+/*
+@media (min-width: 1200px) {
+  #content.container {
+    width: 1170px!important;
+    max-width: 1170px!important;
+  }
+
+}
+*/
 .main-browse .module-content .cards {
   display: flex;
   justify-content: space-around;
@@ -73,15 +91,6 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 
 /* Main Containers */
-.main-browse .container .module-content,
-.main-featured .container .module-content,
-.main-popular .container .module-content,
-.main-showcase .container .module-content,
-.main-groups .container .module-content {
-  width: 100%; 
-  max-width: 1200px; /* Adjust max width as per your design */
-  margin: 0 auto;
-}
 .main-browse .container .module-content h2,
 .main-featured .container .module-content h2,
 .main-popular .container .module-content h2,
@@ -250,11 +259,55 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   text-align: center;
   color: #77C5EB;
   font-size: 30px;
-}/*# sourceMappingURL=custom.css.map */
+}
+
+aside.secondary .module-narrow .context-info .module-content h1 {
+  background: #173055;
+  color: #FFFFFF;
+  padding: 1rem;
+}
+aside.secondary .filters .accordion-group .accordion-toggle {
+  position: relative;
+  background: #173055;
+  padding: 0.75rem 2.25rem;
+}
+aside.secondary .filters .accordion-group .accordion-toggle h2 {
+  font-size: 17px;
+  letter-spacing: -0.5px;
+  font-weight: 600 !important;
+  text-transform: uppercase;
+  margin: 0.5rem 0;
+  color: #FFFFFF;
+}
+aside.secondary .filters .accordion-group .accordion-toggle[data-toggle=collapse]::after {
+  position: absolute;
+  right: 1rem;
+  top: 1.5rem;
+  content: "\f077";
+  color: rgba(255, 255, 255, 0.5);
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+aside.secondary .filters .accordion-group .accordion-toggle.collapsed[data-toggle=collapse]::after {
+  position: absolute;
+  right: 1rem;
+  top: 1.5rem;
+  content: "\f078";
+  color: rgba(255, 255, 255, 0.5);
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
 /* Additional info tables */
-
-.table.table-striped.table-bordered.table-condensed{
+.table.table-striped.table-bordered.table-condensed {
   border: 1px solid #000000;
   border-collapse: collapse;
   width: 100%;
@@ -264,38 +317,46 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   font-size: 16px;
   font-weight: normal;
   line-height: 1.5;
-
 }
-
-.table.table-striped.table-bordered.table-condensed .dataset-label{
+.table.table-striped.table-bordered.table-condensed .dataset-label {
   background-color: #173055;
   color: #fff;
 }
 
-
-.search-form .dataset-item .dataset-content .dataset-heading.a{
-  font-size: 24px;
-  font-weight: bold;
+@media (min-width: 980px) {
+  #content.container {
+    max-width: 1200px;
+  }
+}
+.primary section.module .module-content ul.dataset-list li.dataset-item .dataset-content .dataset-heading a {
+  font-size: 32px;
   color: #173055;
-  margin: 0;
-  padding: 0;
+  font-weight: 600;
+  letter-spacing: -1px;
+}
+.primary article.module .module-content h1 {
+  margin: 1rem auto;
+  color: #173055;
   text-align: center;
+  font-weight: 600 !important;
+  letter-spacing: -1px;
 }
-
-.module.module-narrow.module-shallow .module-heading{
+.primary article.module .module-content .notes {
+  text-align: center;
+  font-weight: 600 !important;
+  margin: 1rem auto;
+  font-size: 24px;
+}
+.primary article.module .module-content #dataset-resources.resources h2 {
+  border-bottom: 2px solid #173055;
+}
+.primary article.module header.page-header .nav-tabs > li > a {
+  border: none;
   background: #173055;
+  color: #FFFFFF;
 }
-
-.main .secondary {
-  z-index: 1;
-  padding-right: 1px;
-  color: #fff;
-  background-color: #173055;
-}
-
-.module-narrow .nav-item > a, .module-narrow .nav-aside li a {
-  padding-left: 15px;
-  padding-right: 15px;
-  position: relative;
-  color: #fff;
-}
+.primary article.module header.page-header .nav-tabs > li.active a {
+  background: #77C5EB;
+  color: #173055;
+  font-weight: 600;
+}/*# sourceMappingURL=custom.css.map */
