@@ -22,6 +22,7 @@ def get_featured_datasets():
             .filter(PackageExtra.key == 'featured_dataset')\
             .filter(PackageExtra.value == 'yes')\
             .filter(Package.state == 'active')\
+            .filter(Package.private == False)\
             .order_by(PackageExtra.value) \
             .all()
     except Exception as e:
