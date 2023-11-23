@@ -59,6 +59,7 @@ def get_contributors_count():
         .facets.get('facet_pivot', {})
         .get('id,author', [])
     )
+    log.info('Number of packages with authors: %s', len(results))
 
     # turn the counts into a lookup from package_id -> number of authors. Note that the number of
     # authors only includes authors we haven't seen before to avoid counting authors of multiple
