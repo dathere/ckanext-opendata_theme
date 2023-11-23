@@ -350,14 +350,13 @@ aside.secondary .filters .accordion-group .accordion-toggle.collapsed[data-toggl
   letter-spacing: -1px;
 }
 .primary article.module .module-content h1 {
+  font-size: 20px;
   margin: 1rem auto;
   color: #173055;
-  text-align: center;
   font-weight: 600 !important;
   letter-spacing: -1px;
 }
 .primary article.module .module-content .notes {
-  text-align: center;
   font-weight: 600 !important;
   margin: 1rem auto;
 }
@@ -385,19 +384,18 @@ aside.secondary .filters .accordion-group .accordion-toggle.collapsed[data-toggl
 #dataset-resources .btn-group .preview .btn-preview {
   background: #ffffff;
   color: #075A83;
-  border-left: 1px solid #075A83;
-  border-bottom: 1px solid #075A83;
+  border: 1px solid #165cab;
 }
 #dataset-resources .btn-group .preview .btn-preview:hover {
-  background: #FFF;
-  color: #075A83;
+  background: #165cab;
+  color: #fff;
 }
 #dataset-resources .btn-group .download .btn-download {
-  background: #075A83;
+  background: #165cab;
   color: #ffffff;
   border: none;
 }
 #dataset-resources .btn-group .download .btn-download:hover {
-  background: #ffffff;
-  color: #075A83;
+  background: #173055;
+  color: #fff;
 }/*# sourceMappingURL=custom.css.map */
