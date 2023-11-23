@@ -10,6 +10,7 @@ from ckan.lib.search import make_connection
 from ckan.model.package import Package
 from ckan.model.package_extra import PackageExtra
 
+log = logging.getLogger(__name__)
 
 def get_featured_datasets():
     """
@@ -83,5 +84,6 @@ def get_contributors_count():
     # get toal number of contributors
     for package_id, created in order:
         total += counts.get(package_id, 0)
+    log.info('Total number of contributors: %s', total)
     return total
 
