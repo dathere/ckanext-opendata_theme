@@ -97,6 +97,7 @@ setup(
         oklahoma_theme=ckanext.opendata_theme.extended_themes.oklahomastate.plugin:OpenDataThemePlugin
         phoenixaz_theme=ckanext.opendata_theme.extended_themes.phoenixaz.plugin:OpenDataThemePlugin
         sanantoniotx_theme=ckanext.opendata_theme.extended_themes.sanantoniotx.plugin:OpenDataThemePlugin
+        sugarland_theme=ckanext.opendata_theme.extended_themes.sugarland.plugin:OpenDataThemePlugin
         virginia_theme=ckanext.opendata_theme.extended_themes.virginiaogda.plugin:OpenDataThemePlugin
 
         [babel.extractors]
