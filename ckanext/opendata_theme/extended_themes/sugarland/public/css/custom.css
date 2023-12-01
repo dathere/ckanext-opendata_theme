@@ -400,8 +400,7 @@ label.nav-trigger:after {
   content: "";
 }
 .main-navigation .main-navigation-title {
-  background: url(/img/b-logo-dark.svg) no-repeat center #F9A01B;
-  background-size: 54px 83px;
+  background: url(/img/b-logo-dark.png) no-repeat center #F9A01B;
   margin: 0;
   padding: 112px;
   text-align: center;
