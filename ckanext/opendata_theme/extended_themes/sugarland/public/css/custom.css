@@ -29,6 +29,7 @@ header.navbar.navbar-static-top.masthead {
   left: 0;
   z-index: 100;
 }
+
 ul.menu {
   margin-left: 0;
 }
@@ -36,6 +37,7 @@ ul.menu {
     display: inline-block;
     position: relative;
     top: 0;
+    max-height: 65px;
     background: #243B81;
   }
 
@@ -79,12 +81,12 @@ ul.menu {
 .masthead .navbar .nav-pills li.active a,
 .masthead a:hover {
   background-color: transparent;
-  color: #288be4;
+  color: #F9A01B;
 }
 .masthead .navbar .nav-pills li a.s:hover,
 .masthead .navbar .nav-pills li.active a.s,
 .masthead a.s:hover {
-  background-color: #fff;
+  background-color: #F9A01B;
 }
 .masthead .navigation {
   margin-right: 0;
@@ -110,18 +112,7 @@ ul.menu {
 .module.module-narrow.resources .list-unstyled.nav.nav-simple {
   border: 1px solid #ddd;
 }
-.module.module-narrow.social .module-heading {
-  color: #fff;
-}
-.module.module-narrow.social .nav.nav-simple {
-  border: 1px solid #ddd;
-}
-.module-resource .muted.ellipsis a {
-  text-transform: none;
-}
-.module-narrow.module-shallow.accordion-group .collapse.accordion-body {
-  border: 1px solid #e5e5e5;
-}
+
 .module-narrow .module-heading,
 .module-narrow .module-content,
 .module-narrow .module-footer {
@@ -130,14 +121,12 @@ ul.menu {
 }
 .nav .label,
 .badge {
-  background-color: #091f2f;
-  color: #ffffff;
+
   text-shadow: none;
 }
 .nav-item.active > a,
 .nav-aside li.active a {
-  background-color: #6e7a81;
-  color: #ffffff;
+
   position: relative;
 }
 .nav-item.active > a:before,
@@ -240,8 +229,19 @@ fieldset.checkboxes label input {
 .account-masthead .account ul li {
   border-left: none;
 }
-.account-masthead .account ul li a:hover {
-  background: #469c23;
+.account-masthead .account ul li a:hover{
+  background-color: #F9A01B!important;
+
+}
+.masthead .navigation .nav-pills li a,
+.masthead .navigation .nav-pills li.active a, .navbar-toggle{
+  color: #F9A01B!important;
+}
+
+.masthead .navigation .nav-pills li a:hover, .masthead .navigation .nav-pills li.active a, .navbar-toggle
+{
+  background-color: #F9A01B!important;
+  color: #fff!important;
 }
 
 /*trigger*/
