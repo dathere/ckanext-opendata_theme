@@ -351,7 +351,7 @@ aside.secondary {
                 .dataset-content {
                     .dataset-heading {
                         a {
-                            font-size: 32px;
+                            font-size: 20px;
                             color: #173055;
                             font-weight: 600;
                             letter-spacing: -1px;
@@ -360,6 +360,12 @@ aside.secondary {
                 }
             }
         }
+    }
+    .dataset-heading a {
+        font-size: 20px;
+        color: #173055;
+        font-weight: 600;
+        letter-spacing: -1px;
     }
     article.module {
         .module-content {

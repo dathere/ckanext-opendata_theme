@@ -11,7 +11,6 @@ from ckan.model.package_extra import PackageExtra
 
 log = logging.getLogger(__name__)
 
-
 def get_featured_datasets():
     """
     Returns a list of featured datasets
@@ -24,11 +23,11 @@ def get_featured_datasets():
             .filter(PackageExtra.value == 'yes')\
             .filter(Package.state == 'active')\
             .filter(Package.private == False)\
-            .order_by(PackageExtra.value)\
-            .all()  # noqa: E712
+            .order_by(PackageExtra.value) \
+            .all()
     except Exception as e:
         logging.error('Error getting featured datasets: %s', e)
-    featured_datasets_dict_list = h.convert_to_dict('package', featured_datasets)
+    featured_datasets_dict_list = h.convert_to_dict('package',featured_datasets)
     return featured_datasets_dict_list
 
 
@@ -37,7 +36,6 @@ def get_all_resource_count():
     Returns a sum of all resources
     """
     q = model.Session.query(model.Resource).filter(model.Resource.state == 'active')
-
     data = {'total_resources': q.count()}
     return data
 
