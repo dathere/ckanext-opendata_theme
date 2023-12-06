@@ -1,0 +1,54 @@
+{% ckan_extends %}
+
+{%- block page -%}
+<input type="checkbox" id="hb__trigger" class="hb__trigger" aria-hidden="true">
+<div class="main-navigation">
+  <div class="main-navigation-title">
+    
+  </div>
+    <div class="region region-navigation">
+      <ul class="menu list-unstyled unstyled">
+      <li class="menu__item is-leaf first leaf secondary-menu-item">
+        <a href="{{ h.url_for('/') }}" class="menu__link">{{ _('Home') }}</a>
+      </li>
+      <li class="menu__item is-leaf first leaf secondary-menu-item">
+        <a href="{{ h.url_for('search') }}" class="menu__link">{{ _('Datasets') }}</a>
+      </li>
+      <li class="menu__item is-leaf leaf secondary-menu-item">
+        <a href="{{ h.url_for('organizations_index') }}" class="menu__link">{{ _('Departments') }}</a>
+      </li>
+      <li class="menu__item is-leaf leaf secondary-menu-item">
+        <a href="{{ h.url_for('group_index') }}" class="menu__link">{{ _('Groups') }}</a>
+      </li>
+      <li class="menu__item is-leaf leaf secondary-menu-item">
+        <a href="#">{{ _('Tips for Users') }}</a>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="page" id="page">
+  {% block skip %}
+    {{ super() }}
+  {% endblock %}
+
+  {% block header %}
+  {% if header_layout_type=='compressed' %}
+      {% include "compressed_header.html" %}
+  {% else %}
+      {% include "default_header.html" %}
+  {% endif %}
+{% endblock %}
+
+  {%- block content %}
+    {{ super() }}
+  {% endblock -%}
+
+  {% block footer %}
+    {% if footer_layout_type=='custom' %}
+      {% include "custom_footer.html" %}
+    {% else %}
+      {% include "default_footer.html" %}
+    {% endif %}
+  {% endblock %}
+</div>
+{%- endblock -%}
