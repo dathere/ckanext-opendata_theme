@@ -5,7 +5,6 @@ import ckan.lib.helpers as h
 import ckan.model as model
 from ckan.lib.search import make_connection
 
-
 from ckan.model.package import Package
 from ckan.model.package_extra import PackageExtra
 
@@ -37,7 +36,6 @@ def get_all_resource_count():
     Returns a sum of all resources
     """
     q = model.Session.query(model.Resource).filter(model.Resource.state == 'active')
-
     data = {'total_resources': q.count()}
     return data
 
