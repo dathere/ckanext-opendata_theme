@@ -31,9 +31,13 @@
     {{ super() }}
   {% endblock %}
 
-  {%- block header %}
-    {% include "header.html" %}
-  {% endblock -%}
+  {% block header %}
+  {% if header_layout_type=='compressed' %}
+      {% include "compressed_header.html" %}
+  {% else %}
+      {% include "default_header.html" %}
+  {% endif %}
+{% endblock %}
 
   {%- block content %}
     {{ super() }}
