@@ -1,6 +1,5 @@
 {% set stats = h.get_site_statistics() %}
 {% set data = h.opendata_theme_get_all_resource_count() %}
-{% set contributors = h.opendata_theme_get_contributors_count() %}
 
 <div class="main-browse">
     <div class="container">
@@ -16,7 +15,7 @@
                             </div>
                         </div>
                         <div class="card">
-                            <img class="card-img-top" src="/img/bar-graph.png" alt="Card image cap">
+                            <img class="card-img-top" src="/img/bar-graph.svg" alt="Card image cap">
                             <div class="card-body">
                                 <h5 class="card-title">{{ h.SI_number_span(data.get('total_resources')) }}</h5>
                                 <p class="card-text">Total Resources</p>
@@ -26,8 +25,8 @@
                         <div class="card">
                             <img class="card-img-top" src="/img/computer-bar-chart.svg" alt="Card image cap">
                             <div class="card-body">
-                                <h5 class="card-title"> {{ h.SI_number_span(contributors) }}</h5>
-                                <p class="card-text">Datasets Contributors</p>
+                                <h5 class="card-title"> {{ h.SI_number_span(stats.organization_count) }}</h5>
+                                <p class="card-text">Total Organizations </p>
                             </div>  
                         </div>
                     </div>
