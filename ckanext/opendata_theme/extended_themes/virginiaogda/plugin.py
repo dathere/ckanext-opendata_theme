@@ -19,5 +19,6 @@ class OpenDataThemePlugin(plugins.SingletonPlugin):
         return {
             'opendata_theme_get_featured_datasets': vh.get_featured_datasets,
             'opendata_theme_get_all_resource_count': vh.get_all_resource_count,
-           # 'opendata_theme_get_contributors_count': vh.get_contributors_count,
+            'opendata_theme_resource_info': vh.get_resource_info,
         }
+
