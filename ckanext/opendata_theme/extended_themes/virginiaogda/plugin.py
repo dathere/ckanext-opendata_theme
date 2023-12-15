@@ -21,4 +21,3 @@ class OpenDataThemePlugin(plugins.SingletonPlugin):
             'opendata_theme_get_all_resource_count': vh.get_all_resource_count,
             'opendata_theme_resource_info': vh.get_resource_info,
         }
-
