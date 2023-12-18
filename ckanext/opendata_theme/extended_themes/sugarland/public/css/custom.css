@@ -415,7 +415,8 @@ label.nav-trigger:after {
   text-decoration: none;
 }
 .main-navigation a:hover {
-  background-color: #fff;
+  background-color: #175182;
+  color: #fff !important;
 }
 .main-navigation .logout a {
   background-color: #fb4d42;
